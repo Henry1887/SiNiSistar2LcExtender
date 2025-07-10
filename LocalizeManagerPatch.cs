@@ -11,10 +11,11 @@ namespace SiNiSistar2LcExtender
         [HarmonyPatch("GetLcText")]
         public static void GetLcTextPostfix(LocalizeID id, ref string __result)
         {
-            if (Plugin.Instance.DiscoveredLanguageMods.TryGetValue(Plugin.Instance.CurrentLanguage, out var modConfig) && modConfig.LocalizationTable != null && modConfig.LocalizationTable.ContainsKey(id.ToString()))
+            if (Plugin.Instance.DiscoveredLanguageMods.TryGetValue(Plugin.Instance.CurrentLanguage, out var modConfig)
+                && modConfig.LocalizationTable != null
+                && modConfig.LocalizationTable.TryGetValue(id.ToString(), out var translation))
             {
-                __result = modConfig.LocalizationTable[id.ToString()].Replace("[[PlayerName]]", ManagerList.PlayerStatus.PlayerName);
-                Plugin.Instance.Log.LogInfo($"LocalizeID: {id}, Result: {__result}");
+                __result = translation.Replace("[[PlayerName]]", ManagerList.PlayerStatus.PlayerName);
             }
         }
 
@@ -22,10 +23,11 @@ namespace SiNiSistar2LcExtender
         [HarmonyPatch("GetLcTextChoice")]
         public static void GetLcTextChoicePostfix(ChoiceLocalizeID id, ref string __result)
         {
-            if (Plugin.Instance.DiscoveredLanguageMods.TryGetValue(Plugin.Instance.CurrentLanguage, out var modConfig) && modConfig.LocalizationTableChoice != null && modConfig.LocalizationTableChoice.ContainsKey(id.ToString()))
+            if (Plugin.Instance.DiscoveredLanguageMods.TryGetValue(Plugin.Instance.CurrentLanguage, out var modConfig)
+                && modConfig.LocalizationTableChoice != null
+                && modConfig.LocalizationTableChoice.TryGetValue(id.ToString(), out var translation))
             {
-                __result = modConfig.LocalizationTableChoice[id.ToString()].Replace("[[PlayerName]]", ManagerList.PlayerStatus.PlayerName);
-                Plugin.Instance.Log.LogInfo($"ChoiceLocalizeID: {id}, Result: {__result}");
+                __result = translation.Replace("[[PlayerName]]", ManagerList.PlayerStatus.PlayerName);
             }
         }
     }

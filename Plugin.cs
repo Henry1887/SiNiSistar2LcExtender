@@ -73,7 +73,8 @@ namespace SiNiSistar2LcExtender
                 {
                     string languageName = Path.GetFileName(dir);
 
-                    ModConfigUnflattened unflattenedConfig = Newtonsoft.Json.JsonConvert.DeserializeObject<ModConfigUnflattened>(File.ReadAllText(Path.Combine(dir, "mod.json")));
+                    ModConfigUnflattened unflattenedConfig = Newtonsoft.Json.JsonConvert.DeserializeObject<ModConfigUnflattened>(
+                        File.ReadAllText(Path.Combine(dir, "mod.json")));
 
                     DiscoveredLanguageMods[languageName] = unflattenedConfig.ToFlattened();
 
@@ -144,7 +145,9 @@ namespace SiNiSistar2LcExtender
 
         internal void ApplyTranslation(DramaFile dramaFile)
         {
-            if (DiscoveredLanguageMods.TryGetValue(CurrentLanguage, out var modConfig) && modConfig.DramaEvents != null && modConfig.DramaEvents.TryGetValue(dramaFile.DramaID, out var translatedDramaFile))
+            if (DiscoveredLanguageMods.TryGetValue(CurrentLanguage, out var modConfig) 
+                && modConfig.DramaEvents != null 
+                && modConfig.DramaEvents.TryGetValue(dramaFile.DramaID, out var translatedDramaFile))
             {
                 // Apply actor names
                 if (modConfig.DramaActorNames != null)
@@ -161,7 +164,8 @@ namespace SiNiSistar2LcExtender
                     }
                 }
                 // Apply one talks
-                if (translatedDramaFile.OneTalks != null && translatedDramaFile.OneTalks.Count == dramaFile.m_OneTalks.Count)
+                if (translatedDramaFile.OneTalks != null 
+                    && translatedDramaFile.OneTalks.Count == dramaFile.m_OneTalks.Count)
                 {
                     for (int i = 0; i < dramaFile.m_OneTalks.Count; i++)
                     {

@@ -16,7 +16,7 @@ namespace SiNiSistar2LcExtender
         public System.Action OnDramaTasksCleaned;
 
 
-        public void Start()
+        public void Awake()
         {
             Instance = this;
         }
@@ -52,7 +52,8 @@ namespace SiNiSistar2LcExtender
             // Process the Queued up tasks, if they are done loading they shouldnt be null anymore
             for (int i = DramaTasks.Count - 1; i >= 0; i--)
             {
-                if (DramaLoader.DramaFileDictionary.TryGetValue((DramaID)DramaTasks[i], out var dramaFile) && dramaFile != null)
+                if (DramaLoader.DramaFileDictionary.TryGetValue((DramaID)DramaTasks[i], out var dramaFile) 
+                    && dramaFile != null)
                 {
                     if (Plugin.Instance.CurrentLanguage != "" && !DramaCleanRequested)
                     {
@@ -87,7 +88,6 @@ namespace SiNiSistar2LcExtender
         {
             if (!IsVisible) return;
             GUI.Label(new Rect(10, 400, 700, 20), $"Alt: Hide | 1: Generate Translation Template | 2: Reload Languages | 3: Switch Language | Current Language: {(Plugin.Instance.CurrentLanguage == "" ? "None" : Plugin.Instance.CurrentLanguage)}");
-
         }
     }
 }

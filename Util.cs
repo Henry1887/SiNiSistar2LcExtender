@@ -206,7 +206,8 @@ namespace SiNiSistar2LcExtender
                     {
                         if (actor.m_NameText == null) continue;
                         string name = actor.m_NameText.m_English;
-                        if (!string.IsNullOrEmpty(name) && !templateConfig.DramaActorNames.ContainsKey(actor.m_IdentifiedName))
+                        if (!string.IsNullOrEmpty(name)
+                            && !templateConfig.DramaActorNames.ContainsKey(actor.m_IdentifiedName))
                         {
                             templateConfig.DramaActorNames[actor.m_IdentifiedName] = name;
                         }
@@ -227,7 +228,9 @@ namespace SiNiSistar2LcExtender
                 templateConfig.DramaEvents = dramaEvents;
 
                 string templatePath = Path.Combine(Plugin.LanguageModFolder, "TranslationTemplate.json");
-                File.WriteAllText(templatePath, Newtonsoft.Json.JsonConvert.SerializeObject(templateConfig.ToUnflattened(), Newtonsoft.Json.Formatting.Indented));
+                File.WriteAllText(templatePath,
+                    Newtonsoft.Json.JsonConvert.SerializeObject(templateConfig.ToUnflattened(),
+                    Newtonsoft.Json.Formatting.Indented));
                 Plugin.Instance.Log.LogInfo($"Translation template generated at {templatePath}. Please fill in the translations and save it as a new mod in the {Plugin.LanguageModFolder} folder.");
             };
             LcExtenderGUI.Instance.TriggerAllDramaTasksClean();
