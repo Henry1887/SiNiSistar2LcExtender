@@ -9,10 +9,18 @@ namespace SiNiSistar2LcExtender
 {
     internal class LcExtenderGUI : MonoBehaviour
     {
-        public static List<int> DramaTasks = new List<int>();
-        public static bool DramaCleanRequested = false;
-
+        public static LcExtenderGUI Instance { get; private set; }
+        public List<int> DramaTasks = new List<int>();
+        public bool DramaCleanRequested = false;
         public bool IsVisible = true;
+        public System.Action OnDramaTasksCleaned;
+
+
+        public void Start()
+        {
+            Instance = this;
+        }
+
         public void Update()
         {
             if (Keyboard.current.altKey.wasPressedThisFrame)
@@ -21,7 +29,7 @@ namespace SiNiSistar2LcExtender
             }
             if (Keyboard.current.digit1Key.wasPressedThisFrame && IsVisible)
             {
-                Plugin.GenerateTranslationTemplate();
+                Util.GenerateTranslationTemplate();
             }
             if (Keyboard.current.digit2Key.wasPressedThisFrame && IsVisible)
             {
@@ -46,7 +54,7 @@ namespace SiNiSistar2LcExtender
             {
                 if (DramaLoader.DramaFileDictionary.TryGetValue((DramaID)DramaTasks[i], out var dramaFile) && dramaFile != null)
                 {
-                    if (Plugin.Instance.CurrentLanguage != "" && !LcExtenderGUI.DramaCleanRequested)
+                    if (Plugin.Instance.CurrentLanguage != "" && !DramaCleanRequested)
                     {
                         Plugin.Instance.ApplyTranslation(dramaFile);
                     }
@@ -55,12 +63,14 @@ namespace SiNiSistar2LcExtender
             }
             if (DramaCleanRequested && DramaTasks.Count == 0)
             {
-                Plugin.FinishExporting();
+                OnDramaTasksCleaned?.Invoke();
                 DramaCleanRequested = false;
+                OnDramaTasksCleaned = null;
+                DramaLoader.ClearLoader(); // Clear the clean drama files
             }
         }
 
-        public static void TriggerAllDramaTasksClean()
+        public void TriggerAllDramaTasksClean()
         {
             if (DramaCleanRequested) return; // Avoid multiple triggers
             DramaCleanRequested = true;

@@ -1,101 +1,101 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
-    <ImplicitUsings>disable</ImplicitUsings>
-    <Nullable>disable</Nullable>
-	  <DebugType>none</DebugType>
-	  <DebugSymbols>false</DebugSymbols>
-	  <ProduceReferenceAssembly>false</ProduceReferenceAssembly>
-	  <CopyLocalLockFileAssemblies>false</CopyLocalLockFileAssemblies>
-	  <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-	  <GenerateDependencyFile>false</GenerateDependencyFile>
-	  <WarningsAsErrors>false</WarningsAsErrors>
-	  <GenerateDocumentationFile>false</GenerateDocumentationFile>
-	  <OutputPath>G:\Games\SiNiSistar2_v1_0_7\BepInEx\plugins\</OutputPath>
-	  <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<ImplicitUsings>disable</ImplicitUsings>
+		<Nullable>disable</Nullable>
+		<DebugType>none</DebugType>
+		<DebugSymbols>false</DebugSymbols>
+		<ProduceReferenceAssembly>false</ProduceReferenceAssembly>
+		<CopyLocalLockFileAssemblies>false</CopyLocalLockFileAssemblies>
+		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+		<GenerateDependencyFile>false</GenerateDependencyFile>
+		<WarningsAsErrors>false</WarningsAsErrors>
+		<GenerateDocumentationFile>false</GenerateDocumentationFile>
+		<OutputPath>G:\Games\SiNiSistar2_v1_0_7\BepInEx\plugins\</OutputPath>
+		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <Folder Include="Libs\" />
-  </ItemGroup>
+	<ItemGroup>
+		<Folder Include="Libs\" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <Reference Include="0Harmony">
-      <HintPath>Libs\0Harmony.dll</HintPath>
-		<Private>false</Private>
-    </Reference>
-    <Reference Include="Assembly-CSharp">
-      <HintPath>Libs\Assembly-CSharp.dll</HintPath>
-		<Private>false</Private>
-    </Reference>
-    <Reference Include="BepInEx.Core">
-      <HintPath>Libs\BepInEx.Core.dll</HintPath>
-		<Private>false</Private>
-    </Reference>
-    <Reference Include="BepInEx.Unity.Common">
-      <HintPath>Libs\BepInEx.Unity.Common.dll</HintPath>
-		<Private>false</Private>
-    </Reference>
-    <Reference Include="BepInEx.Unity.IL2CPP">
-      <HintPath>Libs\BepInEx.Unity.IL2CPP.dll</HintPath>
-		<Private>false</Private>
-    </Reference>
-    <Reference Include="Il2CppInterop.Common">
-      <HintPath>Libs\Il2CppInterop.Common.dll</HintPath>
-		<Private>false</Private>
-    </Reference>
-    <Reference Include="Il2CppInterop.Runtime">
-      <HintPath>Libs\Il2CppInterop.Runtime.dll</HintPath>
-		<Private>false</Private>
-    </Reference>
-    <Reference Include="Il2Cppmscorlib">
-      <HintPath>Libs\Il2Cppmscorlib.dll</HintPath>
-		<Private>false</Private>
-    </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>Libs\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="SiNiSistar2">
-      <HintPath>Libs\SiNiSistar2.dll</HintPath>
-		<Private>false</Private>
-    </Reference>
-    <Reference Include="UniRx">
-      <HintPath>Libs\UniRx.dll</HintPath>
-		<Private>false</Private>
-    </Reference>
-    <Reference Include="UniTask">
-      <HintPath>Libs\UniTask.dll</HintPath>
-		<Private>false</Private>
-    </Reference>
-    <Reference Include="Unity.InputSystem">
-      <HintPath>Libs\Unity.InputSystem.dll</HintPath>
-		<Private>false</Private>
-    </Reference>
-    <Reference Include="UnityEngine">
-      <HintPath>Libs\UnityEngine.dll</HintPath>
-		<Private>false</Private>
-    </Reference>
-    <Reference Include="UnityEngine.AssetBundleModule">
-      <HintPath>Libs\UnityEngine.AssetBundleModule.dll</HintPath>
-		<Private>false</Private>
-    </Reference>
-    <Reference Include="UnityEngine.CoreModule">
-      <HintPath>Libs\UnityEngine.CoreModule.dll</HintPath>
-		<Private>false</Private>
-    </Reference>
-    <Reference Include="UnityEngine.IMGUIModule">
-      <HintPath>Libs\UnityEngine.IMGUIModule.dll</HintPath>
-		<Private>false</Private>
-    </Reference>
-    <Reference Include="UnityEngine.TextRenderingModule">
-      <HintPath>Libs\UnityEngine.TextRenderingModule.dll</HintPath>
-		<Private>false</Private>
-    </Reference>
-    <Reference Include="UnityEngine.UnityWebRequestModule">
-      <HintPath>Libs\UnityEngine.UnityWebRequestModule.dll</HintPath>
-		<Private>false</Private>
-    </Reference>
-  </ItemGroup>
+	<ItemGroup>
+		<Reference Include="0Harmony">
+			<HintPath>Libs\0Harmony.dll</HintPath>
+			<Private>false</Private>
+		</Reference>
+		<Reference Include="Assembly-CSharp">
+			<HintPath>Libs\Assembly-CSharp.dll</HintPath>
+			<Private>false</Private>
+		</Reference>
+		<Reference Include="BepInEx.Core">
+			<HintPath>Libs\BepInEx.Core.dll</HintPath>
+			<Private>false</Private>
+		</Reference>
+		<Reference Include="BepInEx.Unity.Common">
+			<HintPath>Libs\BepInEx.Unity.Common.dll</HintPath>
+			<Private>false</Private>
+		</Reference>
+		<Reference Include="BepInEx.Unity.IL2CPP">
+			<HintPath>Libs\BepInEx.Unity.IL2CPP.dll</HintPath>
+			<Private>false</Private>
+		</Reference>
+		<Reference Include="Il2CppInterop.Common">
+			<HintPath>Libs\Il2CppInterop.Common.dll</HintPath>
+			<Private>false</Private>
+		</Reference>
+		<Reference Include="Il2CppInterop.Runtime">
+			<HintPath>Libs\Il2CppInterop.Runtime.dll</HintPath>
+			<Private>false</Private>
+		</Reference>
+		<Reference Include="Il2Cppmscorlib">
+			<HintPath>Libs\Il2Cppmscorlib.dll</HintPath>
+			<Private>false</Private>
+		</Reference>
+		<Reference Include="Newtonsoft.Json">
+			<HintPath>Libs\Newtonsoft.Json.dll</HintPath>
+		</Reference>
+		<Reference Include="SiNiSistar2">
+			<HintPath>Libs\SiNiSistar2.dll</HintPath>
+			<Private>false</Private>
+		</Reference>
+		<Reference Include="UniRx">
+			<HintPath>Libs\UniRx.dll</HintPath>
+			<Private>false</Private>
+		</Reference>
+		<Reference Include="UniTask">
+			<HintPath>Libs\UniTask.dll</HintPath>
+			<Private>false</Private>
+		</Reference>
+		<Reference Include="Unity.InputSystem">
+			<HintPath>Libs\Unity.InputSystem.dll</HintPath>
+			<Private>false</Private>
+		</Reference>
+		<Reference Include="UnityEngine">
+			<HintPath>Libs\UnityEngine.dll</HintPath>
+			<Private>false</Private>
+		</Reference>
+		<Reference Include="UnityEngine.AssetBundleModule">
+			<HintPath>Libs\UnityEngine.AssetBundleModule.dll</HintPath>
+			<Private>false</Private>
+		</Reference>
+		<Reference Include="UnityEngine.CoreModule">
+			<HintPath>Libs\UnityEngine.CoreModule.dll</HintPath>
+			<Private>false</Private>
+		</Reference>
+		<Reference Include="UnityEngine.IMGUIModule">
+			<HintPath>Libs\UnityEngine.IMGUIModule.dll</HintPath>
+			<Private>false</Private>
+		</Reference>
+		<Reference Include="UnityEngine.TextRenderingModule">
+			<HintPath>Libs\UnityEngine.TextRenderingModule.dll</HintPath>
+			<Private>false</Private>
+		</Reference>
+		<Reference Include="UnityEngine.UnityWebRequestModule">
+			<HintPath>Libs\UnityEngine.UnityWebRequestModule.dll</HintPath>
+			<Private>false</Private>
+		</Reference>
+	</ItemGroup>
 
 </Project>

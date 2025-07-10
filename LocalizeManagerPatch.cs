@@ -1,7 +1,6 @@
 ﻿using HarmonyLib;
 using SiNiSistar2.Lc;
 using SiNiSistar2.Manager;
-using UnityEngine;
 
 namespace SiNiSistar2LcExtender
 {
