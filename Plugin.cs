@@ -431,8 +431,6 @@ namespace SiNiSistar2LcExtender
                     LocalizationTableChoice = SortDictionaryRecursively(UnflattenDictionary(this.LocalizationTableChoice)),
                     DramaEvents = DramaEvents,
                     DramaActorNames = DramaActorNames,
-                    FontAssetBundle = FontAssetBundle,
-                    FontAssetBundleAssetPath = FontAssetBundleAssetPath
                 };
             }
 
@@ -446,8 +444,6 @@ namespace SiNiSistar2LcExtender
                     LocalizationTableChoice = new Dictionary<string, string>(),
                     DramaEvents = new Dictionary<DramaID, DramaEvent>(),
                     DramaActorNames = new Dictionary<string, string>(),
-                    FontAssetBundle = "YourFontBundle.bundle",
-                    FontAssetBundleAssetPath = "Assets\\Fonts\\YourFont.ttf"
                 };
             }
             public string Author;
@@ -456,8 +452,6 @@ namespace SiNiSistar2LcExtender
             public Dictionary<string, string> LocalizationTableChoice;
             public Dictionary<DramaID, DramaEvent> DramaEvents;
             public Dictionary<string, string> DramaActorNames;
-            public string FontAssetBundle;
-            public string FontAssetBundleAssetPath;
         }
 
         [Serializable]
@@ -477,8 +471,6 @@ namespace SiNiSistar2LcExtender
                     LocalizationTableChoice = FlattenedTableChoice,
                     DramaEvents = DramaEvents,
                     DramaActorNames = DramaActorNames,
-                    FontAssetBundle = FontAssetBundle,
-                    FontAssetBundleAssetPath = FontAssetBundleAssetPath
                 };
             }
             public string Author;
@@ -487,8 +479,6 @@ namespace SiNiSistar2LcExtender
             public Dictionary<string, object> LocalizationTableChoice;
             public Dictionary<DramaID, DramaEvent> DramaEvents;
             public Dictionary<string, string> DramaActorNames;
-            public string FontAssetBundle;
-            public string FontAssetBundleAssetPath;
         }
 
         [Serializable]
